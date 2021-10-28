@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <div className="button-section">
             <h2>Login with Google</h2>
-            <Button onClick={signInUsingGoogle} variant="outline-info">Google</Button>
+            <Button onClick={signInUsingGoogle} variant="outline-info">Google SignIn</Button>
         </div>
     );
 };
