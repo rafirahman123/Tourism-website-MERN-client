@@ -10,7 +10,7 @@ const AddPackage = () => {
 
     const onSubmit = data => {
         data.email = user?.email;
-        fetch('http://localhost:5000/addPackage', {
+        fetch('https://boiling-eyrie-00422.herokuapp.com/addPackage', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),
@@ -22,9 +22,9 @@ const AddPackage = () => {
 
 
     return (
-        <div>
-            <h1 className="mt-5 text-center text-info">Please Add Tour Package</h1>
-            <div className="login-box w-25 m-auto mt-5">
+        <div className="m-5">
+            <h1 className="text-center text-info package-title">Please Add Tour Package</h1>
+            <div className="login-box w-25 m-auto m-5">
                 <div className="package-box border border d-flex justify-content-center align-items-center">
                     <div className="login-form">
                         <form onSubmit={handleSubmit(onSubmit)}>
