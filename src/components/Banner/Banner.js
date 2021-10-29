@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import banner1 from '../../image/banner1 (1).jpg';
-import banner2 from '../../image/banner2 (1).jpg';
+import banner1 from '../../image/banner1.jpg';
+import banner2 from '../../image/banner2.jpg';
 import banner3 from '../../image/banner3 (1).jpg';
 import banner4 from '../../image/banner4.jpg';
 
@@ -16,9 +16,9 @@ const Banner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3 className="text-info">Enjoy Your</h3>
-                        <h1 className="fw-bold text-info">Winter Vacation</h1>
-                        <p className="text-info">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className="text-white">Enjoy Your</h3>
+                        <h1 className="fw-bold text-white">Winter Vacation</h1>
+                        <p className="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -29,9 +29,9 @@ const Banner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3 className="text-primary">Enjoy Your</h3>
-                        <h1 className="fw-bold text-primary">Snow adventure</h1>
-                        <p className="text-primary">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className="text-white">Enjoy Your</h3>
+                        <h1 className="fw-bold text-white">Snow adventure</h1>
+                        <p className="text-white">Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
