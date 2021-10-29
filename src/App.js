@@ -9,6 +9,7 @@ import Review from './components/Review/Review';
 import Login from './components/User/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/User/PrivateRoute/PrivateRoute';
+import Manageorder from './components/Manageorder/Manageorder';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             <PrivateRoute path="/blogs">
               <Blogs></Blogs>
             </PrivateRoute>
+            <Route path="/manageorder">
+              <Manageorder></Manageorder>
+            </Route>
             <Route path="/login">
               <Login></Login>
             </Route>
