@@ -1,8 +1,9 @@
 import React from 'react';
+import './Review.css';
 
 const Review = () => {
     return (
-        <div className="m-5">
+        <div className="dynamic-booking-review">
             <h1>This is Review page:</h1>
         </div>
     );

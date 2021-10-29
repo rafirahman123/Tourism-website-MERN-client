@@ -11,6 +11,7 @@ import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/User/PrivateRoute/PrivateRoute';
 import Manageorder from './components/Manageorder/Manageorder';
 import AddPackage from './components/AddPackage/AddPackage';
+import Myorder from './components/Myorder/Myorder';
 
 
 function App() {
@@ -26,18 +27,21 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route path="/review/:reviewId">
-              <Review></Review>
-            </Route>
-            <PrivateRoute path="/blogs">
+            <Route path="/blogs">
               <Blogs></Blogs>
+            </Route>
+            <PrivateRoute path="/review/:reviewId">
+              <Review></Review>
             </PrivateRoute>
             <PrivateRoute path="/addPackage">
               <AddPackage></AddPackage>
             </PrivateRoute>
-            <Route path="/manageorder">
+            <PrivateRoute path="/manageorder">
               <Manageorder></Manageorder>
-            </Route>
+            </PrivateRoute>
+            <PrivateRoute path="/myorder">
+              <Myorder></Myorder>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>

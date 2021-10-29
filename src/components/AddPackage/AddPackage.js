@@ -1,15 +1,15 @@
 import React from 'react';
 import './AddPackage.css'
 import { useForm } from "react-hook-form";
-import useFirebase from '../../hook/useFirebase';
+// import useFirebase from '../../hook/useFirebase';
 
 
 const AddPackage = () => {
-    const { user } = useFirebase();
+    // const { user } = useFirebase();
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        data.email = user?.email;
+        // data.email = user?.email;
         fetch('https://boiling-eyrie-00422.herokuapp.com/addPackage', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -34,13 +34,6 @@ const AddPackage = () => {
                                 className="p-2 m-2 w-100"
                             />
                             <br />
-                            {/* <input
-                                {...register("date")}
-                                // placeholder="Name"
-                                type="date"
-                                className="p-2 m-2 w-100"
-                            />
-                            <br /> */}
                             <input
                                 {...register("description", { required: true })}
                                 placeholder="Description"

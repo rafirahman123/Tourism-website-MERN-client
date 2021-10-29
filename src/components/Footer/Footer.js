@@ -1,13 +1,18 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import logo from '../../image/react-logo-svgrepo-com.svg';
 
 const Footer = () => {
     return (
         <div className="container-fluid p-5 bg-dark text-white">
             <div className="row">
                 <div className="col-3">
-                    <h5>Logo</h5>
-                    <img src="" alt="" />
+
+                    <img src={logo}
+                        width="60"
+                        height="60"
+                        className="d-inline-block align-top "
+                        alt="" />
                     <p>Lorem ipsum dolor sit ametco nsec te tuer adipiscing elitae</p>
                     <p> setsail@qode.com</p>
                     <p> 1 562 867 5309</p>
