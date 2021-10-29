@@ -10,6 +10,8 @@ import Login from './components/User/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './components/User/PrivateRoute/PrivateRoute';
 import Manageorder from './components/Manageorder/Manageorder';
+import AddPackage from './components/AddPackage/AddPackage';
+
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
             </Route>
             <PrivateRoute path="/blogs">
               <Blogs></Blogs>
+            </PrivateRoute>
+            <PrivateRoute path="/addPackage">
+              <AddPackage></AddPackage>
             </PrivateRoute>
             <Route path="/manageorder">
               <Manageorder></Manageorder>
