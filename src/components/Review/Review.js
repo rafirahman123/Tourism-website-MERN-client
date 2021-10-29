@@ -50,7 +50,7 @@ const Review = () => {
                     </div>
                 </div>
                 <div className="col-lg-6 col-sm-12 mx-auto">
-                    <h4 className="mt-5 text-center text-info">Please Provide your Information for Booking</h4>
+                    <h4 className="mt-5 text-center text-info">Please give your Information for Booking</h4>
                     <div className="login-box w-75 mx-auto mt-5">
                         <div className="package-box d-flex justify-content-center align-items-center">
                             <div className="login-form">
