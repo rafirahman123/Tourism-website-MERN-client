@@ -8,6 +8,7 @@ import Blogs from './components/Blogs/Blogs';
 import Review from './components/Review/Review';
 import Login from './components/User/Login/Login';
 import AuthProvider from './Context/AuthProvider';
+import PrivateRoute from './components/User/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -25,9 +26,9 @@ function App() {
             <Route path="/review/:reviewId">
               <Review></Review>
             </Route>
-            <Route path="/blogs">
+            <PrivateRoute path="/blogs">
               <Blogs></Blogs>
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login></Login>
             </Route>
