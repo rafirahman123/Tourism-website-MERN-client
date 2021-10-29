@@ -23,7 +23,7 @@ const Header = () => {
                     <Navbar.Toggle />
 
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav className="mx-auto p-3">
+                        <Nav className="me-auto p-3">
                             <NavLink className="mx-1" to="/home">
                                 <Button variant="outline-secondary">Home</Button>
                             </NavLink>
@@ -35,16 +35,16 @@ const Header = () => {
                         {user?.email ?
 
                             <nav>
-                                <NavLink className="mx-1" to="/manageorder">
+                                <NavLink className="mx-1" to="/manageAllOrder">
                                     <Button variant="outline-secondary">Manage All Order</Button>
                                 </NavLink>
-                                <NavLink className="mx-1" to="/myorder">
+                                <NavLink className="mx-1" to="/myOrders">
                                     <Button variant="outline-secondary">My orders</Button>
                                 </NavLink>
                                 <NavLink to="/addPackage">
                                     <button type="button" className="btn btn-outline-secondary ">Addpackage</button>
                                 </NavLink>
-                                <button onClick={logOut} type="button" className="btn btn-outline-secondary mx-1 ">Logout</button>
+                                <button onClick={logOut} type="button" className="btn btn-outline-secondary mx-1 justify-content-end ">Logout</button>
                             </nav>
                             :
 

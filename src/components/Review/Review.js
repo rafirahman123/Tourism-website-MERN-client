@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
-import useFirebase from '../../hook/useFirebase';
+import useAuth from '../../hook/useAuth';
 import './Review.css';
 
 const Review = () => {
     const { reviewId } = useParams();
 
-    const { user } = useFirebase();
+    const { user } = useAuth();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const [singleReview, setSingleReview] = useState({});

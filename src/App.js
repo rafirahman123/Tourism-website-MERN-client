@@ -36,10 +36,10 @@ function App() {
             <PrivateRoute path="/addPackage">
               <AddPackage></AddPackage>
             </PrivateRoute>
-            <PrivateRoute path="/manageorder">
+            <PrivateRoute path="/manageAllOrder">
               <Manageorder></Manageorder>
             </PrivateRoute>
-            <PrivateRoute path="/myorder">
+            <PrivateRoute path="/myOrders">
               <Myorder></Myorder>
             </PrivateRoute>
             <Route path="/login">
