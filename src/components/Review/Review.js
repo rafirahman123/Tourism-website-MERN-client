@@ -17,8 +17,8 @@ const Review = () => {
             .then(data => {
                 const foundReview = data.find(review => review._id == reviewId)
                 setSingleReview(foundReview);
-                // console.log(foundReview);
-                reset(foundReview);
+                console.log(foundReview);
+
             })
     }, [reviewId]);
 
@@ -103,7 +103,7 @@ const Review = () => {
 
                                     {errors.exampleRequired && <span>This field is required</span>}
 
-                                    <input type="submit" value="Confirm-Booking" className="btn btn-outline-info m-2" />
+                                    <input type="submit" value="Confirm-Booking" className="btn btn-outline-success m-2" />
                                 </form>
                             </div>
                         </div>

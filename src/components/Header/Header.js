@@ -27,7 +27,7 @@ const Header = () => {
                             <NavLink className="mx-1" to="/home">
                                 <Button variant="outline-secondary">Home</Button>
                             </NavLink>
-                            <NavLink className="mx-1" to="/blogs">
+                            <NavLink to="/blogs">
                                 <Button variant="outline-secondary">Blogs</Button>
                             </NavLink>
 
@@ -39,10 +39,10 @@ const Header = () => {
                                     <Button variant="outline-secondary">Manage All Order</Button>
                                 </NavLink>
                                 <NavLink className="mx-1" to="/myOrders">
-                                    <Button variant="outline-secondary">My orders</Button>
+                                    <Button variant="outline-secondary">Myorders</Button>
                                 </NavLink>
-                                <NavLink to="/addPackage">
-                                    <button type="button" className="btn btn-outline-secondary ">Addpackage</button>
+                                <NavLink className="mx-1" to="/addPackage">
+                                    <Button variant="outline-secondary">Addpackage</Button>
                                 </NavLink>
                                 <button onClick={logOut} type="button" className="btn btn-outline-secondary mx-1 justify-content-end ">Logout</button>
                             </nav>

@@ -6,7 +6,6 @@ import './Myorder.css';
 const Myorder = () => {
     const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
-    const [control, setControl] = useState(false);
 
     useEffect(() => {
         fetch(`https://boiling-eyrie-00422.herokuapp.com/myOrders/${user?.email}`)
@@ -16,18 +15,25 @@ const Myorder = () => {
     console.log(myOrders);
 
     const handleDelete = (id) => {
-        fetch(`https://boiling-eyrie-00422.herokuapp.com/deleteOrder/${id}`, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    setControl(!control);
-                } else {
-                    setControl(false);
-                }
+        const proceed = window.confirm("Are you sure, you want to delete?");
+        if (proceed) {
+            fetch(`https://boiling-eyrie-00422.herokuapp.com/orders/${id}`, {
+                method: "DELETE",
+                headers: { "content-type": "application/json" },
             })
+                .then(res => res.json())
+                .then(data => {
+
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert("Deleted Successfully");
+                        const remainingOrders = myOrders?.filter(myOrder => myOrder._id !== id);
+                        setMyOrders(remainingOrders);
+                    }
+                });
+        }
     };
+
 
     const handleUpdate = (id) => {
 
@@ -35,8 +41,8 @@ const Myorder = () => {
 
     return (
         <div className='myorder-review'>
-            <h1>Manage All Orders : {myOrders?.length}</h1>
-            <Table striped bordered hover>
+            <h1 className="text-info m-5">My order: {myOrders?.length}</h1>
+            <Table bordered hover>
                 <thead>
                     <tr>
                         <th>Order No</th>
@@ -56,7 +62,7 @@ const Myorder = () => {
                             <td>{allOrder?.packajeName}</td>
                             <td>{allOrder?.price}</td>
                             <td>{allOrder?.email}</td>
-                            <td>{allOrder?.status}</td>
+                            <td className="text-warning">{allOrder?.status}</td>
                             <button onClick={() => handleUpdate(allOrder?._id)} className="btn bg-danger p-2">Update</button>
                             <button onClick={() => handleDelete(allOrder?._id)} className="btn bg-danger p-2">Delete</button>
                         </tr>

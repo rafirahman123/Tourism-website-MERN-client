@@ -1,37 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import useAuth from '../../hook/useAuth';
 import './Manageorder.css';
 
 const Manageorder = () => {
-    const { user } = useAuth();
+
     const [allOrder, setAllOrder] = useState([]);
-    const [control, setControl] = useState(false);
+
 
     useEffect(() => {
         fetch('https://boiling-eyrie-00422.herokuapp.com/manageAllOrder')
             .then(res => res.json())
             .then(data => setAllOrder(data));
-    }, [control]);
+    }, [allOrder?._id]);
 
     const handleDelete = (id) => {
-        fetch(`https://boiling-eyrie-00422.herokuapp.com/deleteOrder/${id}`, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    setControl(!control);
-                } else {
-                    setControl(false);
-                }
+        const proceed = window.confirm("Are you sure, you want to delete?");
+        if (proceed) {
+            fetch(`https://boiling-eyrie-00422.herokuapp.com/orders/${id}`, {
+                method: "DELETE",
+                headers: { "content-type": "application/json" },
             })
+                .then(res => res.json())
+                .then(data => {
+
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert("Deleted Successfully");
+                        const remainingOrders = allOrder?.filter(myOrder => myOrder._id !== id);
+                        setAllOrder(remainingOrders);
+                    }
+                });
+        }
     };
 
     return (
         <div className="manage-container">
             <div className='my-5'>
-                <h1>Manage All Orders {allOrder?.length}</h1>
+                <h1 className="text-info m-5">Manage All Orders {allOrder?.length}</h1>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
