@@ -29,6 +29,10 @@ const Myorder = () => {
             })
     };
 
+    const handleUpdate = (id) => {
+
+    }
+
     return (
         <div className='myorder-review'>
             <h1>Manage All Orders : {myOrders?.length}</h1>
@@ -40,6 +44,7 @@ const Myorder = () => {
                         <th>Package Name</th>
                         <th>Price</th>
                         <th>Email</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -51,6 +56,8 @@ const Myorder = () => {
                             <td>{allOrder?.packajeName}</td>
                             <td>{allOrder?.price}</td>
                             <td>{allOrder?.email}</td>
+                            <td>{allOrder?.status}</td>
+                            <button onClick={() => handleUpdate(allOrder?._id)} className="btn bg-danger p-2">Update</button>
                             <button onClick={() => handleDelete(allOrder?._id)} className="btn bg-danger p-2">Delete</button>
                         </tr>
                     </tbody>

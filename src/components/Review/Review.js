@@ -17,12 +17,14 @@ const Review = () => {
             .then(data => {
                 const foundReview = data.find(review => review._id == reviewId)
                 setSingleReview(foundReview);
-                console.log(foundReview);
+                // console.log(foundReview);
+                reset(foundReview);
             })
     }, [reviewId]);
 
     const onSubmit = data => {
         data.email = user?.email;
+        data.status = 'Pending';
         fetch('https://boiling-eyrie-00422.herokuapp.com/orders', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -50,8 +52,8 @@ const Review = () => {
                     </div>
                 </div>
                 <div className="col-lg-6 col-sm-12 mx-auto">
-                    <h4 className="mt-5 text-center text-info">Please give your Information for Booking</h4>
-                    <div className="login-box w-75 mx-auto mt-5">
+                    <h4 className="booking-text text-info">Information for Booking</h4>
+                    <div className="login-box w-50 mx-auto mt-5">
                         <div className="package-box d-flex justify-content-center align-items-center">
                             <div className="login-form">
                                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -68,7 +70,7 @@ const Review = () => {
                                     />
                                     <br />
                                     <input defaultValue={user?.email}
-                                        {...register("email")}
+                                        {...register("email", { required: true })}
                                         placeholder="Email"
                                         className="p-2 m-2 w-100"
                                     />
