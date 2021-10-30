@@ -6,9 +6,9 @@ const Resort = () => {
         <>
 
             <div className="my-5 py-5 bg-info">
-                <h5 className="text-center text-secondary">Choose Your</h5>
+                <h5 className="text-center text-white">Choose Your</h5>
                 <h1>Resorts</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos eaque voluptatem vel ex esse beatae dolorum odit fugit itaque necessitatibus?</p>
+                <p>A hotel is frequently a central feature of a resort, such as the Grand Hotel at Mackinac Island, Michigan. Some resorts are also condominium complexes that are timeshares or owned fractionally or wholly owned condominium. A resort is not always a commercial establishment operated by a single company, but in the late 20th century, that sort of facility became more common.</p>
             </div>
 
             <div className="row resort py-5">

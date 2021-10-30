@@ -15,7 +15,7 @@ const Sports = () => {
             </div>
 
             <div className="py-3">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex expedita repellat beatae impedit iste quidem, maiores, blanditiis eveniet laudantium ratione</p>
+                <p>A resort (North American English) is a self-contained commercial establishment that tries to provide most of a vacationer's wants, such as food, drink, lodging, sports, entertainment, and shopping, on the premises. The term resort may be used for a hotel property that provides an array of amenities, typically including entertainment and recreational activities. </p>
                 <Button
                     onClick={() => setOpen(!open)}
                     aria-controls="example-collapse-text"
