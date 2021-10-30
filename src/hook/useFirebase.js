@@ -9,15 +9,19 @@ InitializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState();
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState('');
 
     const auth = getAuth();
 
     const signInUsingGoogle = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user);
+        return signInWithPopup(auth, googleProvider)
+            // .then(result => {
+            //     setUser(result.user);
+            // })
+            .catch(error => {
+                setError(error.message);
             })
             .finally(() => setIsLoading(false));
     }
