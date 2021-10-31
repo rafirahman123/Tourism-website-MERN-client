@@ -52,17 +52,6 @@ const Header = () => {
                                     <NavDropdown.Item href="#action/3.4"><button onClick={logOut} type="button" className="btn btn-outline-secondary mx-1 justify-content-end ">Logout</button></NavDropdown.Item>
                                 </NavDropdown>
 
-
-                                {/* <NavLink className="mx-1" to="/manageAllOrder">
-                                    <Button variant="outline-secondary">Manage All Order</Button>
-                                </NavLink>
-                                <NavLink className="mx-1" to="/myOrders">
-                                    <Button variant="outline-secondary">Myorders</Button>
-                                </NavLink>
-                                <NavLink className="mx-1" to="/addPackage">
-                                    <Button variant="outline-secondary">Addpackage</Button>
-                                </NavLink>
-                                <button onClick={logOut} type="button" className="btn btn-outline-secondary mx-1 justify-content-end ">Logout</button> */}
                             </nav>
                             :
 
@@ -71,8 +60,8 @@ const Header = () => {
                             </NavLink>
                         }
                         {user?.email ?
-                            <Navbar.Text>
-                                <span className="text-secondary"></span> <img className='profile-image' src={user?.photoURL} alt='' /> <a href="#login">{user?.displayName}</a>
+                            <Navbar.Text><span className="text-secondary mx-2">{user?.displayName}</span>
+                                <img className='profile-image' src={user?.photoURL} alt='' />
                             </Navbar.Text> : ''}
                     </Navbar.Collapse>
 
