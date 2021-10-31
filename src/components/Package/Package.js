@@ -14,8 +14,7 @@ const Package = ({ item }) => {
                         <p class="card-text">{description}</p>
                         <h5 class="card-text">${price}</h5>
                         <Link to={`/review/${_id}`}>
-                            <button type="button" class="btn btn-outline-info m-2">Book:
-                                {packajeName.toLowerCase()}</button>
+                            <button type="button" class="btn btn-outline-info m-2">Book Now</button>
                         </Link>
                     </div>
                 </div>
