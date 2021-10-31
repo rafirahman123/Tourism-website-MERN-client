@@ -6,17 +6,23 @@ import { useForm } from "react-hook-form";
 
 const AddPackage = () => {
     // const { user } = useFirebase();
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        // data.email = user?.email;
+        //data.email = user?.email;
         fetch('https://boiling-eyrie-00422.herokuapp.com/addPackage', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data),
         })
             .then(res => res.json())
-            .then(result => console.log(result));
+            .then(result => {
+                console.log(result)
+                if (data) {
+                    alert('added successfully');
+                    reset();
+                }
+            });
         console.log(data);
     }
 
@@ -62,6 +68,7 @@ const AddPackage = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
